@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(2, 2, 2);
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s ease-in;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 5vh;
+    padding: 2rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(15, 15, 15);
+    backdrop-filter: blur(10px);
+}
+
+.logo a{ 
+    text-decoration: none;
+    color: cyan;
+    font-size: 26px;
+    padding-left: 60px;
+    font-weight: bold;
+    text-shadow: 0 0 25px cyan;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 50px cyan;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    padding-right: 60px;
+}
+
+.navbar a {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.active,
+.navbar a:hover {
+    color: cyan;
+    border-bottom: 2px solid cyan;
+    transition: 0.3s ease-in-out;
+}
+
+.hero {
+    padding: 120px 220px;
+    color: white;
+}
+
+.hero b {
+    color: cyan;
+}
+
+.hero h2 {
+    font-size: 38px;
+}
+
+.hero h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero span {
+    color: cyan;
+    font-size: 38px;
+}
+
+.anime {
+    display: inline-flex;
+}
+
+.dynamic-text {
+    list-style-type: none;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.hero .dynamic-text span {
+    position: relative;
+}
+
+.hero .dynamic-text li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(2, 2, 2);
+    border-left: 2px solid cyan;
+    animation: typing 2.0s steps(12) infinite;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+.socials-icons a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.0rem;
+    height: 2.0rem;
+    background: transparent;
+    border: 0.2rem solid cyan;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.socials-icons a:hover {
+    background-color: cyan;
+    transform: scale(1.3);
+    color: black;
+    transition: 0.3s;
+}
+
+.hire a{
+    padding: 10px 30px;
+    background-color: cyan;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border: 0.2rem solid cyan;
+    font-weight: 600;
+    box-shadow: 0 0 25px white;
+}
+
+.hire:hover {
+    background-color: transparent;
+    color: white;
+    transition: 0.3s;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/*Services*/
+.services {
+    background-color: rgb(15, 15, 15);
+    color: white;
+}
+
+.services h2 {
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 38px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    gap: 2.5rem;
+    margin: 20px;
+}
+
+.services-box {
+    background-color: cyan;
+    color: black;
+    height: 420px;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.services-box h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 2.0rem;
+    font-weight: 500;
+}
+
+.services-box:hover{
+    background-color: cyan;
+    transform: scale(1.02);
+}
+
+.services-box .service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: baseline;
+    padding: 3em;
+}
+
+/*About*/
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background: rgb(2, 2, 2);
+    color: white;
+    padding: 120px 220px
+}
+
+.about b {
+    color: cyan;
+}
+
+.about h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.about-img {
+    border-radius: 50%;
+}
+
+.about-img img {
+    position: static;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px cyan;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 50px cyan;
+    box-shadow: 0 0 100px cyan;
+}
+
+
+.about p {
+    margin-bottom: 20px;
+}
+
+.about .btn{
+    padding: 10px 30px;
+    background-color: cyan;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    border: 0.2rem solid cyan;
+    font-weight: 600;
+    box-shadow: 0 0 25px white;
+}
+
+.about .btn:hover {
+    background-color: transparent;
+    color: white;
+    transition: 0.3s;
+}
+
+
+/*Contact*/
+
+.contact {
+    background-color: rgb(15, 15, 15);
+    padding-top: 20px; 
+    padding-bottom: 10px;
+}
+
+.container {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.2rem solid cyan;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 25px cyan;
+    padding: 20px; 
+}
+
+.container h1 {
+    text-decoration: underline;
+    color: cyan;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.container textarea,
+.container input {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin: 10px;
+    border: 0.2rem solid cyan;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.contact-form ::placeholder{
+    font-weight: 500;
+}
+
+.container button {
+    padding: 10px 30px;
+    width: 50%;
+    margin-left: 120px;
+    border: 0.2rem solid cyan;
+    border-radius: 20px;
+    background-color: cyan;
+    color:black;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 25px white;
+    margin-bottom: 20px;
+}
+
+.container button:hover {
+    background-color: transparent;
+    color: white;
+    transition: 0.3s;
+}
+
+/*footer*/
+.footer {
+    color: white;
+    text-align: center;
+    background-color: rgb(2, 2, 2);
+}
+
+.footer p{
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+    
+.socials a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.0rem;
+    height: 2.0rem;
+    background: transparent;
+    border: 0.2rem solid cyan;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.socials a:hover {
+    background-color: cyan;
+    transform: scale(1.3);
+    color: black;
+    transition: 0.3s;
+}
+
+/*scroolbar*/
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: cyan;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 50px;
+}
+
+/*responsive*/
+
+@media only screen and (max-width: 768px) {
+    nav {
+        height: 8vh;
+        padding: 1rem;
+    }
+
+    .logo a {
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 8vh 5vw;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hire a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .about .btn a{
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .services {
+        padding: 8vh 5vw;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav {
+        height: 6vh;
+        padding: 0.5rem;
+    }
+
+    .logo a {
+        font-size: 1rem;
+    }
+
+    .navbar ul {
+        gap: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 6vh 5vw;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero h3 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hire a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .services {
+        padding: 6vh 5vw;
+    }
+
+    .about .btn a{
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .services h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
