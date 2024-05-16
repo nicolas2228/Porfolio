@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="user badge.jpg" type="image/png">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
 </head>
@@ -11,11 +12,19 @@
     <nav>
         <div class="logo"><a href="index.html">Nicolas .</a></div>
         <div class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a class="active" href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About me</a></li>
                 <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul>
+                <li class="hideOnMobile"><a class="active" href="#home">Home</a></li>
+                <li class="hideOnMobile"><a href="#services">Services</a></li>
+                <li class="hideOnMobile"><a href="#about">About me</a></li>
+                <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+                <li class="menu-button" onclick="showSiderbar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </div>
     </nav>
@@ -94,41 +103,10 @@
                         <a href="#"><i class='bx bxl-github' ></i></a>
                 </div>
                     <p>© 2023 Nicolas ALL | All Rights Reserved</p>
-                </div>
+                </div> 
+                    <button class="scrool-btn" id="scrooltop"><i class='bx bxs-upvote'></i></button>
 
-                <script>
-                    // Get all the navigation links
-                    const navLinks = document.querySelectorAll('.navbar a');
-                
-                    // Function to handle scroll event
-                    function handleScroll() {
-                        // Loop through each link
-                        navLinks.forEach(link => {
-                            // Get the section corresponding to the link
-                            const sectionId = link.getAttribute('href').slice(1);
-                            const section = document.getElementById(sectionId);
-                
-                            // Check if the section is in the viewport
-                            if (isInViewport(section)) {
-                                // Remove 'active' class from all links
-                                navLinks.forEach(link => link.classList.remove('active'));
-                                // Add 'active' class to the current link
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                
-                    // Function to check if at least a portion of an element is in the viewport
-                    function isInViewport(element) {
-                        const rect = element.getBoundingClientRect();
-                        return (
-                            rect.top <= window.innerHeight / 2 &&
-                            rect.bottom >= window.innerHeight / 2
-                        );
-                    }
-                
-                    // Add scroll event listener
-                    window.addEventListener('scroll', handleScroll);
-                </script>
+                    <script src="script.js"></script>
+
 </body>
 </html>
