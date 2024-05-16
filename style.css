@@ -98,7 +98,8 @@ nav {
 }
 
 .hero .dynamic-text span {
-    position: relative;
+    position: absolute;
+    z-index: -3;
 }
 
 .hero .dynamic-text li span::after {
@@ -109,7 +110,7 @@ nav {
     width: 100%;
     background-color: rgb(2, 2, 2);
     border-left: 2px solid cyan;
-    animation: typing 2.0s steps(12) infinite;
+    animation: typing 2.0s steps(8) infinite;
 }
 
 @keyframes typing {
@@ -425,23 +426,13 @@ section {
         padding-left: 0;
     }
 
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 0;
-    }
-
-    .navbar a {
-        font-size: 0.9rem;
-    }
-
     .hero {
         padding: 8vh 5vw;
     }
 
     .hero h2 {
         font-size: 1.8rem;
+        margin-top: 20px;
     }
 
     .hero h3 {
@@ -449,12 +440,16 @@ section {
         margin-bottom: 0.5rem;
     }
 
-    .hire a {
-        padding: 0.4rem 0.8rem;
+    .hero span {
+        font-size: 1.3rem;
+    }
+
+    .hire a{
+        padding: 0.7rem 0.8rem;
         font-size: 0.8rem;
     }
 
-    .about .btn a{
+    .about .btn {
         padding: 0.3rem 0.6rem;
         font-size: 0.7rem;
     }
@@ -468,24 +463,43 @@ section {
         margin-bottom: 1rem;
     }
 
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 8vh 5vw;
+    }
+
+    .services h3 {
+        font-size: 1.7rem;
+    }
+
+    .services-container {
+        margin: 10px;
+    }
+
     .services-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+        gap: 2rem;
+    }
+
+    .contact {
+        padding: 8vh 5vw;
+    }
+
+    .footer {
+        padding: 8vh 5vw;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    nav {
-        height: 6vh;
-        padding: 0.5rem;
-    }
 
     .logo a {
         font-size: 1rem;
-    }
-
-    .navbar ul {
-        gap: 0.5rem;
     }
 
     .navbar a {
@@ -501,7 +515,7 @@ section {
     }
 
     .hero h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-bottom: 0.3rem;
     }
 
@@ -528,4 +542,86 @@ section {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
+
+    .contact button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        left: 10px;
+    }
 }
+
+.scrool-btn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+    font-weight: 600;
+    background-color: cyan;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    right: 10px;
+    bottom: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px cyan;
+    transition: 0.3s ease-in-out;
+}
+
+.scrool-btn:hover {
+    background-color: rgb(92, 148, 148);
+}
+
+/*Menu-bar*/
+
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 150px;
+    z-index: 999;
+    background-color: cyan;
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 10;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.sidebar a {
+    width: 100%;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.menu-button{
+    display: none;
+}
+
+
+@media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
